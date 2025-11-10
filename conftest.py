@@ -1,6 +1,7 @@
 import pytest
 from selenium import webdriver
 from faker import Faker
+from locators.board_locators import LoginLocators
 
 fake = Faker()
 
@@ -21,16 +22,3 @@ def new_user():
     password = "Qwerty123!"
     return email, password
 
-
-@pytest.fixture
-def authorized_user(driver):
-    driver.find_element("xpath", "//button[text()='Вход и регистрация']").click()
-    driver.find_element("name", "email").send_keys("existing_user@example.com")
-    driver.find_element("name", "password").send_keys("Qwerty123!")
-    driver.find_element("xpath", "//button[text()='Войти']").click()
-    return driver
-
-
-@pytest.fixture
-def ad_data():
-    return "Учебник по Python", "Почти новый, отличное состояние", "1500"

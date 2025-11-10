@@ -41,6 +41,7 @@ class AdsLocators:
     CITY_DROPDOWN = (By.XPATH, "//select[@name='city']")
     CITY_OPTION_MOSCOW = (By.XPATH, "//option[contains(text(),'Москва')]")
     CONDITION_NEW = (By.XPATH, "//input[@type='radio' and @value='new']")
-    PUBLISH_BUTTON = (By.XPATH, "//button[contains(text(),'Разместить объявление')]")
+    PUBLISH_BUTTON = (By.XPATH, "//button[normalize-space()='Опубликовать']")
     PROFILE_BUTTON = (By.XPATH, "//a[contains(text(),'Профиль')]")
     AD_IN_PROFILE = (By.XPATH, "//h3[contains(text(),'Книга по Python')]")
+    PROFILE_AVATAR = (By.XPATH, "//button[contains(@class,'circleSmall')]")
